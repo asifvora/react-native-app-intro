@@ -1,4 +1,6 @@
-import React from 'react'
+'use strict';
+
+import React from 'react';
 import {
     Text,
     View
@@ -26,7 +28,6 @@ export const Dot = ({
 }
 
 export const RenderDots = (index, total, props) => {
-    console.log('dot vval', index)
     let dots = [];
     for (let i = 0; i < total; i++) {
         dots.push(React.createElement(Dot, {
