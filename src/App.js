@@ -221,7 +221,7 @@ export default class App extends Component {
           {...this.state}
           isDoneBtnShow={isDoneBtnShow}
           styles={this.styles}
-          onNextBtnClick={() => this.onNextBtnClick(index1)}
+          // onNextBtnClick={() => this.onNextBtnClick(index1)}
           onDoneBtnClick={() => this.onDoneBtnClick()} /> :
           <View style={this.styles.btnContainer} />
         }
@@ -248,7 +248,7 @@ export default class App extends Component {
           paginationStyle={{
             bottom: 50
           }}
-          showsButtons={false}
+          showsButtons={true}
           // nextButton={this.nextButton}
           loop={false}
           renderPagination={this.renderPagination}
@@ -260,21 +260,21 @@ export default class App extends Component {
           <View style={this.styles.slide}>
             <Image
               style={this.styles.image}
-              source={require('./public/img/1/c2.png')}
+              source={require('./public/img/3/2.png')}
               resizeMode='cover'
             />
           </View>
           <View style={this.styles.slide}>
             <Image
               style={this.styles.image}
-              source={require('./public/img/1/c3.png')}
+              source={require('./public/img/3/3.png')}
               resizeMode='cover'
             />
           </View>
           <View style={this.styles.slide}>
             <Image
               style={this.styles.image}
-              source={require('./public/img/1/c1.png')}
+              source={require('./public/img/3/1.png')}
               resizeMode='cover'
             />
           </View>

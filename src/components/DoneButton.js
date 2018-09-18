@@ -8,38 +8,19 @@ import {
 } from 'react-native';
 
 export const DoneButton = ({
-  styles, onDoneBtnClick, onNextBtnClick,
-  rightTextColor, isDoneBtnShow,
-  doneBtnLabel, nextBtnLabel,
-  doneFadeOpacity, skipFadeOpacity, nextOpacity
+  styles, onDoneBtnClick, rightTextColor, isDoneBtnShow,
+  doneBtnLabel,
 }) => {
   return (
     <View>
-      {Platform.OS === 'ios' ?
+      {isDoneBtnShow ? Platform.OS === 'ios' ?
         <View style={styles.btnContainer}>
-          <Animated.View style={[styles.full, { height: 0 }, {
-            opacity: doneFadeOpacity,
-            transform: [{
-              translateX: skipFadeOpacity.interpolate({
-                inputRange: [0, 1],
-                outputRange: [0, 20],
-              }),
-            }],
-          }]}
+          <Animated.View style={[styles.full, { height: 0 }]}
           >
-            <View style={styles.full}>
-              <Text style={[styles.controllText, {
-                color: rightTextColor, paddingRight: 30,
-              }]}>
-                {doneBtnLabel}
-              </Text>
-            </View>
-          </Animated.View>
-          <Animated.View style={[styles.full, { height: 0 }, { opacity: nextOpacity }]}>
             <TouchableOpacity style={styles.full}
-              onPress={isDoneBtnShow ? onDoneBtnClick : onNextBtnClick}>
+              onPress={onDoneBtnClick}>
               <Text style={[styles.nextButtonText, { color: rightTextColor }]}>
-                {nextBtnLabel}
+                {doneBtnLabel}
               </Text>
             </TouchableOpacity>
           </Animated.View>
@@ -47,14 +28,14 @@ export const DoneButton = ({
         :
         <View style={[styles.btnContainer, { height: 0, paddingBottom: 5 }]}>
           <TouchableOpacity style={styles.full}
-            onPress={isDoneBtnShow ? onDoneBtnClick : onNextBtnClick}
+            onPress={onDoneBtnClick}
           >
             <Text style={[styles.nextButtonText, { color: rightTextColor }]}>
-              {isDoneBtnShow ? doneBtnLabel : nextBtnLabel}
+              {doneBtnLabel}
             </Text>
           </TouchableOpacity>
         </View>
-      }
+        : <View style={styles.btnContainer} ><View style={styles.full}></View></View>}
     </View>
   )
 }
