@@ -19,6 +19,7 @@ import assign from 'assign-deep';
 const defaulStyles = {
     container: {
         flex: 1,
+        padding: 15,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
@@ -40,8 +41,9 @@ const defaulStyles = {
         position: 'absolute'
     },
     image: {
-        width,
-        height,
+        padding: 15,
+        // width,
+        // height,
     },
     header: {
         flex: 0.5,
@@ -235,21 +237,21 @@ export default class App extends Component {
                     <View style={this.styles.slide}>
                         <Image
                             style={this.styles.image}
-                            source={require('../../public/img/3/2.png')}
+                            source={require('../../public/img/4/2.png')}
                             resizeMode='cover'
                         />
                     </View>
                     <View style={this.styles.slide}>
                         <Image
                             style={this.styles.image}
-                            source={require('../../public/img/3/3.png')}
+                            source={require('../../public/img/4/3.png')}
                             resizeMode='cover'
                         />
                     </View>
                     <View style={this.styles.slide}>
                         <Image
                             style={this.styles.image}
-                            source={require('../../public/img/3/1.png')}
+                            source={require('../../public/img/4/4.png')}
                             resizeMode='cover'
                         />
                     </View>
